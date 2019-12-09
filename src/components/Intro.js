@@ -1,6 +1,7 @@
 import './Intro.css';
 import React from 'react';
 import { useEffect } from 'react';
+import 'web-animations-js/web-animations.min';
 
 var messages1_dom;
 var messages2_dom;
