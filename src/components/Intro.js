@@ -92,15 +92,15 @@ function Intro({className}){
             document.querySelector('.circle3').style.transform = 'scale(0)';
             document.querySelector('.rect1').style.transform = 'scale(0)';
             document.querySelector('.rect2').style.transform = 'scale(0)';
-            document.querySelector('.text1').style.opacity = '0.0';
+            document.querySelector('.textWelcome').style.opacity = '0.0';
             document.querySelector('.text2').style.opacity = '0.0';
-            document.querySelector('.text3').style.opacity = '0.0';
             document.querySelector('.text4').style.opacity = '0.0';
             document.querySelector('.text5').style.opacity = '0.0';
-            document.querySelector('.text6').style.opacity = '0.0';
+            document.querySelector('.textIntro').style.opacity = '0.0';
             document.querySelector('.textline1').style.opacity = '0.0';
             document.querySelector('.textScroll1').style.opacity = '0.0';
 
+            
             setMidpointTransform('circle1');
             setMidpointTransform('circle2');
             setMidpointTransform('circle3');
@@ -115,7 +115,7 @@ function Intro({className}){
             setMidpointTransform('vline3');
             setMidpointTransform('vline4');
             setMidpointTransform('groupName');
-            setMidpointTransform('text1');
+            setMidpointTransform('textWelcome');
 
             d_anim('hline1',1000,1500,scaleXKeyFrames,'normal','ease-out');
             d_anim('hline2',1100,1600,scaleXKeyFrames,'normal','ease-out');
@@ -132,7 +132,7 @@ function Intro({className}){
             d_anim('circle1',3000,4000,scaleKeyFrames,'reverse','ease-in-out');
             d_anim('circle2',3000,4000,scaleKeyFrames,'reverse','ease-in-out');
             d_anim('circle3',3000,4000,scaleKeyFrames,'reverse','ease-in-out');
-            d_anim('text1',3500,4000,opacityKeyFrames,'normal','ease-in-out');
+            d_anim('textWelcome',3500,4000,opacityKeyFrames,'normal','ease-in-out');
             d_anim('hline1',2000,2500,scaleXKeyFrames,'reverse','ease-out');
             d_anim('hline2',2100,2600,scaleXKeyFrames,'reverse','ease-out');
             d_anim('hline3',2200,2700,scaleXKeyFrames,'reverse','ease-out');
@@ -145,14 +145,33 @@ function Intro({className}){
             d_anim('rect2',5200,6200,scaleKeyFrames,'normal','ease-in-out');
             d_anim('rect1',6000,7000,scaleKeyFrames,'reverse','ease-in-out');
             d_anim('rect2',6200,7200,scaleKeyFrames,'reverse','ease-in-out');
-            d_anim('text1',5500,6000,opacityKeyFrames,'reverse','ease-in-out');
-            d_anim('text2',6000,6500,opacityKeyFrames,'normal','ease-in-out');
-            d_anim('text3',6000,6500,opacityKeyFrames,'normal','ease-in-out');
-            d_anim('text4',6000,6500,opacityKeyFrames,'normal','ease-in-out');
-            d_anim('text5',6000,6500,opacityKeyFrames,'normal','ease-in-out');
-            d_anim('text6',6000,6500,opacityKeyFrames,'normal','ease-in-out');
-            d_anim('textline1',6000,6500,opacityKeyFrames,'normal','ease-in-out');
-            d_anim('textScroll1',9000,10000,opacityKeyFrames,'normal','ease-in-out');
+            d_anim('textWelcome',5500,6000,opacityKeyFrames,'reverse','ease-in-out');
+
+            d_anim('textIntro',7000,7500,[
+                {transform : 'translateY(-30px)', opacity : '0.0'},                
+                {transform : 'translateY(0)', opacity : '1.0'},],
+                'normal','ease-in-out');
+
+            d_anim('text2',7500,8000,[
+                {transform : 'translateY(-30px)', opacity : '0.0'},                
+                {transform : 'translateY(0)', opacity : '1.0'},],
+                'normal','ease-in-out');
+
+            d_anim('textline1',7500,8000,[
+                {transform : 'translateX(-50px)', opacity : '0.0'},                
+                {transform : 'translateX(0)', opacity : '1.0'},],'normal','ease-in-out');
+
+            d_anim('text4',7500,8000,[
+                {transform : 'translateX(50px)', opacity : '0.0'},                
+                {transform : 'translateX(0)', opacity : '1.0'},],'normal','ease-in-out');
+
+            d_anim('text5',7500,8000,[
+                {transform : 'translateX(50px)', opacity : '0.0'},                
+                {transform : 'translateX(0)', opacity : '1.0'},],'normal','ease-in-out');
+            
+            d_anim('textScroll1',9000,9500,opacityKeyFrames,'normal','ease-in-out');
+
+
 
         },
         []
@@ -160,132 +179,138 @@ function Intro({className}){
 
     return(
         <div className='Intro'>
-            <svg width='100vw' height='100vh' viewBox='0 0 2000 2000' >
+            <svg width='100vw' height='100vh' viewBox='0 0 2500 2000' >
                 <circle className='circle1'
-                        cx='1000px' cy='1000px' r='250px'
+                        cx='1250px' cy='1000px' r='250px'
                         fill='hsl(20,100%,20%)'
                         stroke='transparent'
                         strokeWidth='10px'/>
 
                 <circle className='circle2'
-                        cx='1000px' cy='1000px' r='250px'
+                        cx='1250px' cy='1000px' r='250px'
                         fill='hsl(140,100%,20%)'
                         stroke='transparent'
                         strokeWidth='10px'/>
 
                 <circle className='circle3'
-                        cx='1000px' cy='1000px' r='250px'
+                        cx='1250px' cy='1000px' r='250px'
                         fill='hsl(280,100%,20%)'
                         stroke='transparent'
                         strokeWidth='10px'/>
 
                 <g className='groupName'>
                     <path   className="hline1"
-                            d='M 850 850 h 300' 
+                            d='M 1100 850 h 300' 
                             stroke='white'
                             strokeWidth='5px'/>
 
                     <path   className="hline2"
-                            d='M 850 950 h 300' 
+                            d='M 1100 950 h 300' 
                             stroke='white'
                             strokeWidth='5px'/>
 
                     <path   className="hline3"
-                            d='M 850 1050 h 300' 
+                            d='M 1100 1050 h 300' 
                             stroke='white'
                             strokeWidth='5px' />
 
                     <path   className="hline4"
-                            d='M 850 1150 h 300' 
+                            d='M 1100 1150 h 300' 
                             stroke='white'
                             strokeWidth='5px' />
 
                     <path   className="vline1"
-                            d='M 850 850 v 300' 
+                            d='M 1100 850 v 300' 
                             stroke='white'
                             strokeWidth='5px' />
 
                     <path   className="vline2"
-                            d='M 950 850 v 300' 
+                            d='M 1200 850 v 300' 
                             stroke='white'
                             strokeWidth='5px' />
 
                     <path   className="vline3"
-                            d='M 1050 850 v 300' 
+                            d='M 1300 850 v 300' 
                             stroke='white'
                             strokeWidth='5px' />
 
                     <path   className="vline4"
-                            d='M 1150 850 v 300' 
+                            d='M 1400 850 v 300' 
                             stroke='white'
                             strokeWidth='5px' />
                 </g>
 
-                <text   className='text1'
-                        x='1000px' y='1025px'
+                <text   className='textWelcome'
+                        x='1250px' y='1025px'
                         textAnchor='middle'
                         fontSize='150px'
                         fill='hsl(0,0%,100%)'>
                     WELCOME
                 </text>
 
-                <text   className='text2'
-                        x='50px' y='520px'
-                        textAnchor='right'
-                        fontSize='40px'
-                        fill='hsl(0,0%,100%)'>
-                    Hi, my name is
-                </text>
+                <g className='textIntro'>
+                    <text   
+                            x='200px' y='400px'
+                            textAnchor='right'
+                            fontSize='180px'
+                            fill='hsl(170,100%,30%)'>
+                        1    INTRO
+                    </text>
+                </g>
 
-                <text   className='text3'
-                        x='50px' y='650px'
-                        textAnchor='left'
-                        fontSize='100px'
-                        fill='hsl(0,0%,100%)'>
-                    LEE KIT
-                </text>
-
-                <text   className='text4'
-                        x='50px' y='800px'
-                        textAnchor='left'
-                        fontSize='100px'
-                        fill='hsl(0,0%,50%)'>
-                    Solutions using software coding
-                </text>
-
-                <text   className='text5'
-                        x='50px' y='920px'
-                        textAnchor='left'
-                        fontSize='50px'
-                        fill='hsl(0,0%,50%)'>
-                    I am a software developer base on Penang, Malaysia
-                </text>
-
-                <text   className='text6'
-                        x='50px' y='1000px'
-                        textAnchor='left'
-                        fontSize='50px'
-                        fill='hsl(0,0%,50%)'>
-                    I have been doing software development for 6 years
-                </text>
+                <g className='text2'>
+                    <text 
+                            x='400px' y='700px'
+                            textAnchor='right'
+                            fontSize='120px'
+                            fill='hsl(0,0%,100%)'>
+                                <tspan>Hi, my name is </tspan>
+                                <tspan>LEE KIT</tspan>
+                    </text>
+                </g>
 
                 <path   className="textline1"
-                            d='M 400 620 h 900' 
-                            stroke='hsl(0,0%,70%)'
-                            strokeWidth='5px'/>
+                            d='M 320 500 v 800' 
+                            stroke='hsl(170,100%,30%)'
+                            strokeWidth='10px'/>
+
+                <g className='text4'>
+                    <text   x='400px' y='900px'
+                            textAnchor='left'
+                            fontSize='100px'
+                            fill='hsl(0,0%,50%)'>
+                        An inspire software developer
+                    </text>
+                </g>
+
+                <g className='text5'>
+                    <text   x='400px' y='1000px'
+                            textAnchor='left'
+                            fontSize='50px'
+                            fill='hsl(0,0%,50%)'>
+                                <tspan x='400' dy='10'>
+                                    I am a software developer base on Penang, Malaysia
+                                </tspan>
+                                <tspan x='400' dy='70'>
+                                    I have been working as a software developer for over 6 years
+                                </tspan>
+                    </text>
+                </g>
+
+                
 
                 <rect   className='rect1'
-                        x='500' y='750' 
+                        x='750' y='750' 
                         width='1000px' height='500px'
                         fill='hsl(20,100%,20%)' />
                 <rect   className='rect2'
-                        x='500' y='750' 
+                        x='750' y='750' 
                         width='1000px' height='500px' 
                         fill='hsl(280,100%,20%)'/>
 
 
                 <text   className='textScroll1'
-                        x='50px' y='1500px'
+                        x='200px' y='1450px'
                         textAnchor='left'
                         fontSize='60px'
                         fill='hsl(0,0%,70%)'>
