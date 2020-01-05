@@ -3,6 +3,7 @@ import React from 'react';
 
 import Intro from './components/Intro';
 import About from './components/About';
+import Skills from './components/Skills';
 import Project from './components/Project';
 import Contact from './components/Contact';
 
@@ -16,10 +17,10 @@ function App(){
                 <About />
             </div>
             <div className="sectionDiv">
-                <Project />
+                <Skills />
             </div>
             <div className="sectionDiv">
-                <Contact />
+                <Project />
             </div>
         </div>
     );

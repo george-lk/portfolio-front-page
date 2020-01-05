@@ -95,7 +95,6 @@ function Intro({className}){
             document.querySelector('.textWelcome').style.opacity = '0.0';
             document.querySelector('.text2').style.opacity = '0.0';
             document.querySelector('.text4').style.opacity = '0.0';
-            document.querySelector('.text5').style.opacity = '0.0';
             document.querySelector('.textIntro').style.opacity = '0.0';
             document.querySelector('.textline1').style.opacity = '0.0';
             document.querySelector('.textScroll1').style.opacity = '0.0';
@@ -165,9 +164,6 @@ function Intro({className}){
                 {transform : 'translateX(50px)', opacity : '0.0'},                
                 {transform : 'translateX(0)', opacity : '1.0'},],'normal','ease-in-out');
 
-            d_anim('text5',7500,8000,[
-                {transform : 'translateX(50px)', opacity : '0.0'},                
-                {transform : 'translateX(0)', opacity : '1.0'},],'normal','ease-in-out');
             
             d_anim('textScroll1',9000,9500,opacityKeyFrames,'normal','ease-in-out');
 
@@ -249,14 +245,44 @@ function Intro({className}){
                 </text>
 
                 <g className='textIntro'>
-                    <text   
-                            x='200px' y='400px'
+                    <rect   x='400px' y='150px' 
+                            width='50px' height='400px'
+                            fill='#E89529' />
+
+                    <rect   x='480px' y='380px' 
+                            width='100px' height='10px'
+                            fill='#E89529' />
+                    
+                    <rect   x='480px' y='410px' 
+                            width='140px' height='10px'
+                            fill='#E89529' />
+
+                    <rect   x='480px' y='440px' 
+                            width='180px' height='10px'
+                            fill='#E89529' />
+
+                
+                    <text  
+                            x='480px' y='300px'
+                            textAnchor='right'
+                            fontSize='150px'
+                            fill='hsla(240,2%,76%,0.3)'>
+                        01
+                    </text>
+
+                    <text  
+                            x='700px' y='480px'
                             textAnchor='right'
                             fontSize='180px'
-                            fill='hsl(170,100%,30%)'>
-                        1    INTRO
+                            fill='hsla(240,2%,76%,0.3)'>
+                        INTRO
                     </text>
                 </g>
+
+                <path   className="textline1"
+                            d='M 320 500 v 650' 
+                            stroke='hsl(170,100%,30%)'
+                            strokeWidth='2px'/>
 
                 <g className='text2'>
                     <text 
@@ -264,35 +290,28 @@ function Intro({className}){
                             textAnchor='right'
                             fontSize='120px'
                             fill='hsl(0,0%,100%)'>
-                                <tspan>Hi, my name is </tspan>
-                                <tspan>LEE KIT</tspan>
+                                <tspan>My Name is LEE KIT</tspan>
                     </text>
                 </g>
 
-                <path   className="textline1"
-                            d='M 320 500 v 800' 
-                            stroke='hsl(170,100%,30%)'
-                            strokeWidth='10px'/>
+                
 
                 <g className='text4'>
-                    <text   x='400px' y='900px'
-                            textAnchor='left'
-                            fontSize='100px'
-                            fill='hsl(0,0%,50%)'>
-                        An inspire software developer
-                    </text>
-                </g>
-
-                <g className='text5'>
-                    <text   x='400px' y='1000px'
+                    <text   x='400px' y='800px'
                             textAnchor='left'
                             fontSize='50px'
                             fill='hsl(0,0%,50%)'>
                                 <tspan x='400' dy='10'>
-                                    I am a software developer base on Penang, Malaysia
+                                    I am a software developer based in Penang, Malaysia with 6 years 
                                 </tspan>
                                 <tspan x='400' dy='70'>
-                                    I have been working as a software developer for over 6 years
+                                    experience in software development. I am a passionate software
+                                </tspan>
+                                <tspan x='400' dy='70'>
+                                    developer and love learning new things. I spent time to learn new
+                                </tspan>
+                                <tspan x='400' dy='70'>
+                                    technologies that impact the software development process.
                                 </tspan>
                     </text>
                 </g>
@@ -310,7 +329,7 @@ function Intro({className}){
 
 
                 <text   className='textScroll1'
-                        x='200px' y='1450px'
+                        x='400px' y='1450px'
                         textAnchor='left'
                         fontSize='60px'
                         fill='hsl(0,0%,70%)'>
